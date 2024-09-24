@@ -31,7 +31,7 @@ public class PhonebookController {
 	
 	
 	
-	
+	/*
 	@GetMapping ( value="/api/persons" )
 	public List<PersonVo> getList() {
 		
@@ -40,6 +40,17 @@ public class PhonebookController {
 		List<PersonVo> personList =  phonebookService.exeGetPersonList();
 		
 		return personList;
+		
+	}*/
+	
+	@GetMapping ( value="/api/persons" )
+	public JsonResult getList() {
+		
+		System.out.println("PhonebookController.getList()");
+		
+		List<PersonVo> personList =  phonebookService.exeGetPersonList();
+		
+		return JsonResult.success(personList);
 		
 	}
 	
